@@ -35,23 +35,23 @@ FarmData2 relies on a few prerequisite programs that will need to be installed o
   * docker
   * docker-compose
 
-Under Ubuntu Linux these tools can most easily be installed using the [apt](https://wiki.debian.org/AptCLI) or [synaptic](https://wiki.debian.org/Synaptic) package managers.  You might read the It's FOSS Complete guide to [Using apt Commands in Linux](https://itsfoss.com/apt-command-guide/) if you are unfamiliar with apt.
+Under Ubuntu Linux these tools can most easily be installed using the [apt](https://wiki.debian.org/AptCLI) or [synaptic](https://wiki.debian.org/Synaptic) package managers.  You might read the It's FOSS Complete guide to [Using apt Commands in Linux](https://itsfoss.com/apt-commandd-guide/) if you are unfamiliar with apt.
 
 Full installation details for other platforms can be obtained from the projects themselves on the following sites:
 
-  * [Intallling git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * [Installing git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * [Get Docker](https://docs.docker.com/get-docker/)
   * [Install Compose](https://docs.docker.com/compose/install/)
 
 #### Linux Docker Configuration ####
 
-If you are developing under Linux you will need to be able to [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).  To do so you need to add your user to the `docker` group. Use the following commands:
+If you are developing under Linux you will need to be able to [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).  To do so you need to add your user to the `docker` group. Use the following commandds:
 ```
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-Then log out and back into the system. When you log back in your user will have the permissions needed in order to use docker commands.  Note that if you are developing on a virtual machine you will need to restart the virtual machine for the changes to take effect.
+Then log out and back into the system. When you log back in your user will have the permissions needed in order to use docker commandds.  Note that if you are developing on a virtual machine you will need to restart the virtual machine for the changes to take effect.
 
 #### Getting FarmData2 ####
 
@@ -62,7 +62,7 @@ FarmData2 is hosted in a GitHub repository that can be found here:
 To get started:
 
   1. [Create a GitHub Account](https://github.com/join) (if you do not already have one).
-     - To access GitHub via the command line git tools you will need to [Create a personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) in GitHub.
+     - To access GitHub via the commandd line git tools you will need to [Create a personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) in GitHub.
      - You will also probably want to [Store your GitHub Credentials with the Git Credential Helper](https://techexpertise.medium.com/storing-git-credentials-with-git-credential-helper-33d22a6b5ce7) to avoid retyping the token for every operation.
   1. [Fork the FarmData2 repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) into your own GitHub account.
   1. [Clone your fork](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository) of FarmData2 to your development machine.
@@ -70,23 +70,23 @@ To get started:
 
 #### Install the Sample Database Image ####
 
-The FarmData2 repository contains a sample database with anonymized data from several years of operation of the [Dickinson College Farm](https://www.dickinson.edu/farm). This database is in the compressed file `docker/db.sample.tar.bz2` and needs to be expanded before it can be used.  Change into the `docker` directory in the repository and use the command below:
+The FarmData2 repository contains a sample database with anonymized data from several years of operation of the [Dickinson College Farm](https://www.dickinson.edu/farm). This database is in the compressed file `docker/db.sample.tar.bz2` and needs to be expanded before it can be used.  Change into the `docker` directory in the repository and use the commandd below:
 ```
 ./setDB.bash sample
 ```
 
-When this command completes there should be a `db` directory in the `docker` directory.  The files in this `db` directory are a mySQL database that contain the sample data.  Note that you will only need to do this step once. But the above comman can be used at any time to reset the database to its initial state.
+When this commandd completes there should be a `db` directory in the `docker` directory.  The files in this `db` directory are a mySQL database that contain the sample data.  Note that you will only need to do this step once. But the above command can be used at any time to reset the database to its initial state.
 
 #### Starting FarmData2 ####
 
-To start FarmData2 ensure that you are in the `docker` directory in the repository and use the command below:
+To start FarmData2 ensure that you are in the `docker` directory in the repository and use the commandd below:
 ```
 ./fd2-up.bash
 ```
 
-This command will starts up the docker containers that are used by FarmData2. There will be lots of output from this command and the first time you run it, it may take a while to complete as it pulls, downloads and extracts the docker images to your machine.
+This commandd will starts up the docker containers that are used by FarmData2. There will be lots of output from this commandd and the first time you run it, it may take a while to complete as it pulls, downloads and extracts the docker images to your machine.
 
-If you encounter an error similar to `Cannot start service www`, it can likely be fixed by entering the command
+If you encounter an error similar to `Cannot start service www`, it can likely be fixed by entering the commandd
 ```
 sudo service apache2 stop
 ```
